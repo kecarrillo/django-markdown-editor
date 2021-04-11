@@ -29,8 +29,8 @@ def post_form_view(request):
     else:
         form = PostForm()
         context = {'form': form, 'title': 'Post Form'}
-    theme = getattr(settings, 'MARTOR_THEME', 'bootstrap')
-    return render(request, '%s/form.html' % theme, context)
+        theme = getattr(settings, 'MARTOR_THEME', 'bootstrap')
+        return render(request, '%s/form.html' % theme, context)
 
 
 def test_markdownify(request):
@@ -40,7 +40,8 @@ def test_markdownify(request):
         context = {
             'post': {
                 'title': 'Fake Post',
-                'description': """It **working**! :heart: [Python Learning](https://python.web.id)"""
+                'description': """It **working**! :heart: 
+                [Python Learning](https://python.web.id)"""
             }
         }
     theme = getattr(settings, 'MARTOR_THEME', 'bootstrap')
