@@ -24,19 +24,17 @@ blocks:
           - checkout
           - cache restore
           - pip install --cache-dir .pip_cache -r requirements.txt
+          - pip install martor
       jobs:
         - name: Unit tests
           commands:
             - cd martor_demo
-            - echo pwd
-            - pip install martor
             - python manage.py makemigrations
             - python manage.py migrate
             - python manage.py test
         - name: Checklist
           commands:
             - cd martor_demo
-            - echo pwd
             - python manage.py check --deploy
         - name: Style Check
           commands:
