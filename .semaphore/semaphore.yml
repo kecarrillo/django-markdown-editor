@@ -28,14 +28,14 @@ blocks:
         - name: Unit tests
           commands:
             - cd martor_demo
-            - python manage.py collectstatic
+            - pwd
             - python manage.py makemigrations
             - python manage.py migrate
             - python manage.py test
         - name: Checklist
           commands:
             - cd martor_demo
-            - python manage.py collectstatic
+            - pwd
             - python manage.py check --deploy
         - name: Style Check
           commands:
